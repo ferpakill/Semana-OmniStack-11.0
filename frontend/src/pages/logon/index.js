@@ -18,7 +18,8 @@ export default function Logon(){
             const response = await api.post('sessions', {id});
             localStorage.setItem('ongId', id)
             localStorage.setItem('ongName', response.data.name);
-            history.pushState('/profile');
+            history.push('/profile');
+            console.log(response.data.name);
         }catch(err){
             alert('Falha no Logon')
         }
